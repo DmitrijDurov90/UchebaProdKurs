@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <header>
+        <div class="logo">Интернет-магазин</div>
+        <div class="cart">
+            <form action="#" class="search-form">
+                <input type="text" class="search-field">
+                <button class="btn-search" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
+            
+                
+            <div class="cart-block "  v-show="showCart">
+                <div class="product-item1" v-for="product of goods" :key="goods.id_product">
+                    
+                    <img :src="imgCatalog" alt="Some img">
+                    <div class="desc">
+                        <h3>{{product.product_name}}</h3>
+                        <p>{{product.price}}₽</p>
+                        <p>Количество: {{}}</p>                        
+                        <button class="buy-btn" @click="remove">Удолить</button>
+                    </div>
+                        <button class="buy-btn" @click="">Оформить заказ</button>
+                </div>
+                <p v-if="!goods.length" >Корзина пуста</p>
+            </div>
+            
+        </div>
+    </header>
+    <main>
+        <div class="products">
+            <div class="product-item" v-for="product of products" :key="product.id_product">
+                <img :src="imgCatalog" alt="Some img">
+                <div class="desc">
+                    <h3>{{product.product_name}}</h3>
+                    <p>{{product.price}}₽</p>
+                    <button class="buy-btn" @click="addProduct">Купить</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/main111.js"></script>
+</body>
+</html>
