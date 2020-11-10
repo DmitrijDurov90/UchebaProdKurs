@@ -596,3 +596,5 @@ project_variant_1/node_modules/yarn/bin/yarnpkg
 project_variant_1/node_modules/yarn/bin/yarnpkg.cmd
 project_variant_1/node_modules/yarn/lib/cli.js
 project_variant_1/node_modules/yarn/lib/v8-compile-cache.js
+myContent/1.html
+myContent/node.txt
